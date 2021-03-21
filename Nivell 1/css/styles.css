@@ -1,0 +1,41 @@
+body {
+  background-color: #ffffff;
+  height:100%;
+  overflow: hidden;
+}
+
+.ball {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #FFE600;
+}
+
+.animacion-x {
+  /* name , duration, timing function, delay, iteration count, direction  */
+  animation: animacion-x 3.14s linear 0s infinite alternate;
+}
+
+.animacion-y {
+  /* name , duration, timing function, delay, iteration count, direction  */
+  animation: animacion-y 1.03s ease-in 0s infinite alternate;
+}
+
+@keyframes animacion-x {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(calc(100vw - 10vmin));
+  }
+}
+
+@keyframes animacion-y {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(calc(100vh - 10vmin));
+  }
+}
