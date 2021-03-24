@@ -21,62 +21,76 @@ body {
 
 .stripe {
   display: grid;
-  opacity: 0;
   place-items: center;
   cursor: pointer;
-  animation: opacity 0.6s var(--bezier) 0.5s;
+}
+
+.stripe-text {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  animation-fill-mode: forwards;
+  width:100%;
+  height:100%;
+}
+
+.stripes-container .stripe-text:hover::before {
+  transform: skew(0deg) scale(2) translate(0,0);
+  opacity: 0.1;
+}
+
+.stripe-text::before {
+  content: " ";
+  position: absolute;
+  width:100%;
+  height:100%;
+  background: white;
+  opacity: 0.1;
+  transform-origin: center center;
+  transform: skew(30deg) scaleY(1) translate(0,0);
+  transition: 0.5s;
 }
 
 .stripe:nth-child(1) {
   background: #244F75;
-  animation: stripe1 0.6s var(--bezier) 0.1s;
-  opacity: 1;
+  animation: fromLeft 0.7s var(--bezier) ;
 }
 
 .stripe:nth-child(2) {
   background: #60BFBF;
-  animation:  stripe2 0.6s var(--bezier) 0.2s;
-  opacity: 1;
+  animation: fromBottom 0.8s var(--bezier) 0.01s ;
+
 }
 
 .stripe:nth-child(3) {
   background: #8C4B7E;
-  animation: stripe3 0.6s var(--bezier) 0.3s ;
-  opacity: 1;
+  animation: fromTop 0.9s var(--bezier) 0.01s ;
+
 }
 
 .stripe:nth-child(4) {
   background: #F8BB44;
-  animation: stripe2 0.6s var(--bezier) 0.4s;
-  opacity: 1;
+  animation: fromBottom 1s var(--bezier) 0.02s ;
+
 }
 
 .stripe:nth-child(5) {
   background: #F24B4B;
-  animation: stripe5 0.6s var(--bezier) 0.5s ;
-  opacity: 1;
+  animation: fromRight 1.1s var(--bezier) 0.02s;
+
 }
 
 
-@keframes opacity {
-  0% {
-     opacity:0; }
-  100% {
-     opacity:1; }
-  }
-
-
-
-@keyframes stripe1 {
+@keyframes fromTop {
 0% {
-  -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0); }
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0,-100%, 0); }
 100% {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 }
 
-@keyframes stripe2 {
+@keyframes fromBottom {
 0% {
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);}
@@ -85,19 +99,19 @@ body {
   transform: translate3d(0, 0, 0); }
 }
 
-@keyframes stripe3 {
+@keyframes fromRight {
 0% {
-  -webkit-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -100%, 0);}
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);}
 100% {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 }
 
-@keyframes stripe5 {
+@keyframes fromLeft {
 0% {
-  -webkit-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0); }
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0); }
 100% {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }

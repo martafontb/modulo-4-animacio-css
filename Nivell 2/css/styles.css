@@ -35,6 +35,13 @@ body {
   0% {
     transform: translateY(0px);
   }
+  97%{
+    height: 70px;
+  }
+  98% {
+    height: 40px;
+    transform: translateY(calc(100vh - 20vmin));
+  }
   100% {
     transform: translateY(calc(100vh - 10vmin));
   }
