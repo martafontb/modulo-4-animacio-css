@@ -30,8 +30,9 @@ body {
   align-items: center;
   justify-content: center;
   animation-fill-mode: forwards;
-  width:100%;
+  width:70%;
   height:100%;
+  z-index: 5;
 }
 
 .stripes-container .stripe-text:hover::before {
@@ -42,13 +43,14 @@ body {
 .stripe-text::before {
   content: " ";
   position: absolute;
-  width:100%;
+  width:70%;
   height:100%;
   background: white;
   opacity: 0.1;
   transform-origin: center center;
   transform: skew(30deg) scaleY(1) translate(0,0);
   transition: 0.5s;
+  z-index: 1;
 }
 
 .stripe:nth-child(1) {
